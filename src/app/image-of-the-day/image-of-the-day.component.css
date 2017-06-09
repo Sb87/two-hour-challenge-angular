@@ -1,0 +1,21 @@
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.iotd {
+    display: inline-block;
+}
+
+img {
+     max-height: 600px;
+}
+
+.caption {
+    text-align: right;
+    padding-top: 1em;
+    color: #737373;
+    font-weight: bold;
+    font-size: .8em;
+}

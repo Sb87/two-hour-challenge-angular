@@ -1,0 +1,10 @@
+<h2>Image of the Day</h2>
+<div class="center">
+  <section class="iotd">
+    <img *ngIf="photo" [src]="photo.img_src" />
+    <div class="caption">
+      <div>{{rover}} {{photo.camera.name}}</div>
+      <div>{{photo.earth_date | date:'MMMM dd, yyyy'}}</div>
+    </div>
+  </section>
+</div>

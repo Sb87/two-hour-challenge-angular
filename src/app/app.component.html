@@ -1,0 +1,11 @@
+<header>
+  <h1>The Red Planet Rovers</h1>
+  <nav>
+    <button class="btn" (click)="page = 'iotd'">Image of the Day</button>
+    <button class="btn" (click)="page = 'gallery'">Image Gallery</button>
+  </nav>
+</header>
+<main>
+  <app-image-of-the-day *ngIf="page === 'iotd'"></app-image-of-the-day>
+  <app-image-gallery *ngIf="page === 'gallery'"></app-image-gallery>
+</main>
