@@ -1,0 +1,44 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+select {
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: inherit;
+    background: #d9d9d9;
+}
+
+.thumbs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.thumb {
+    max-width: 20%;
+    margin-right: 6.666667%;
+    margin-bottom: 2em;
+}
+
+.thumb:nth-child(4n) {
+    margin-right: 0;
+}
+
+.thumb img {
+    max-width: 100%;
+}
+
+.caption {
+    text-align: right;
+    padding-top: 1em;
+    color: #737373;
+    font-weight: bold;
+    font-size: .8em;
+}

@@ -1,0 +1,12 @@
+<header>
+  <h2>{{rover}}: {{camera}}</h2>
+  <select [(ngModel)]="camera">
+  <option *ngFor="let c of cameras" [value]="c">{{c}}</option>
+</select>
+</header>
+<section class="thumbs" *ngIf="photos">
+  <div class="thumb" *ngFor="let photo of photos[camera]">
+    <img [src]="photo.img_src" />
+    <div class="caption">{{photo.earth_date | date:'MMMM dd, yyyy'}}</div>
+  </div>
+</section>
