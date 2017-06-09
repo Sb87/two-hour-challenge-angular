@@ -1,17 +1,6 @@
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-select {
-    border: 1px solid black;
+.roundedBtn {
     border-radius: 4px;
     padding: 10px 20px;
-    font-size: 1.2em;
-    font-weight: bold;
-    color: inherit;
-    background: #d9d9d9;
 }
 
 .thumbs {
@@ -33,12 +22,4 @@ select {
 
 .thumb img {
     max-width: 100%;
-}
-
-.caption {
-    text-align: right;
-    padding-top: 1em;
-    color: #737373;
-    font-weight: bold;
-    font-size: .8em;
 }

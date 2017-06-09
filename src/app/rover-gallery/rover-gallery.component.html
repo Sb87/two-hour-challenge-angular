@@ -1,6 +1,6 @@
-<header>
+<header class="justified">
   <h2>{{rover}}<ng-container *ngIf="camera">: {{camera}}</ng-container></h2>
-  <select *ngIf="camera" [(ngModel)]="camera">
+  <select class="btn roundedBtn" *ngIf="camera" [(ngModel)]="camera">
     <option *ngFor="let c of cameras" [value]="c">{{c}}</option>
   </select>
 </header>
