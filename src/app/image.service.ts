@@ -50,6 +50,7 @@ export class ImageService {
     if (rover === 'Opportunity' && yesterday > opportunityMaxDate) {
       yesterday = opportunityMaxDate;
     }
+
     return this.getDailyImages(rover, yesterday).map(photos => {
       if (!photos || photos.length == 0) {
         return this.getYesterdaysImages(rover, yesterday);
