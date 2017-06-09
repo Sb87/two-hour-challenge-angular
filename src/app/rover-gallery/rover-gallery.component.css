@@ -23,3 +23,15 @@
 .thumb img {
     max-width: 100%;
 }
+
+@media (max-width: 900px) {
+    .thumb {
+        max-width: 45%;
+        margin-right: 10%;
+        margin-bottom: 2em;
+    }
+
+    .thumb:nth-child(2n) {
+        margin-right: 0;
+    }
+}

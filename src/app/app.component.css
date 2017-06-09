@@ -24,3 +24,13 @@ nav {
 main {
     margin: 40px 60px 0;
 }
+
+@media (max-width: 820px) {
+    header {
+        display: block;
+    }
+
+    nav {
+        margin-left: 20px;
+    }
+}
