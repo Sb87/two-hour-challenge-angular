@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 
 import { MarsPhotosResponse, Photo, RoverName } from './api-types';
 
-const apiKey = 'aZlmHCp3jD9sanwE8KvytidYArlTvlhwr3fEhYyM';
+const apiKey = 'Jpz1UkzkRxdxrg9Xg69mJSleGt5HCbQzqXWUrlFR';
 
 // This is the most recent date that has photos for Opportunity as of 6/9/2017
 const opportunityMaxDate = new Date(2017, 1, 22);
