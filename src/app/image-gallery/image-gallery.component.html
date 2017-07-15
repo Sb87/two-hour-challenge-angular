@@ -1,2 +1,6 @@
-<app-rover-gallery rover="Curiosity"></app-rover-gallery>
-<app-rover-gallery rover="Opportunity"></app-rover-gallery>
+<label class="datepicker">
+    <span>Date:</span>
+    <my-date-picker [options]="datePickerOptions" [(ngModel)]="date"></my-date-picker>
+</label>
+<app-rover-gallery [date]="date ? date.jsdate : undefined" rover="Curiosity"></app-rover-gallery>
+<app-rover-gallery [date]="date ? date.jsdate : undefined" rover="Opportunity"></app-rover-gallery>

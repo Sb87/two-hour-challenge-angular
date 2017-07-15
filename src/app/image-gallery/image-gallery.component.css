@@ -1,0 +1,8 @@
+.datepicker {
+    display: flex;
+    align-items: center;
+}
+
+.datepicker span {
+    margin-right: 1ex;
+}

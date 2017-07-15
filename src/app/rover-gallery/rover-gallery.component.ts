@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnChanges, Input } from '@angular/core';
 
 import { MarsPhotosResponse, Photo, RoverName } from '../api-types';
 import { ImageService } from '../image.service';
@@ -8,28 +8,46 @@ import { ImageService } from '../image.service';
   templateUrl: './rover-gallery.component.html',
   styleUrls: ['./rover-gallery.component.css']
 })
-export class RoverGalleryComponent implements OnInit {
+export class RoverGalleryComponent implements OnChanges {
   @Input() rover: RoverName;
+  @Input() date?: Date;
 
-  photos: { [camera: string]: Photo[] };
-  camera: string;
-  cameras: string[];
+  photos: { [camera: string]: Photo[] } | null | undefined;
+  camera?: string;
+  cameras?: string[];
 
   constructor(private imageService: ImageService) { }
 
-  ngOnInit() {
+  ngOnChanges() {
     this.getImages();
   }
 
   getImages() {
-    this.imageService.getLatestImages(this.rover).subscribe(photos => {
+    if (this.photos === null) {
+      this.photos = undefined; // Clear "no photos" message
+    }
+
+    const observable = this.date
+      ? this.imageService.getDailyImages(this.rover, this.date)
+      : this.imageService.getLatestImages(this.rover);
+
+    observable.subscribe(photosArray => {
       this.photos = {};
-      photos.forEach(photo => {
-        const cameraPhotos = this.photos[photo.camera.full_name] || (this.photos[photo.camera.full_name] = []);
-        cameraPhotos.push(photo);
-      });
-      this.cameras = Object.keys(this.photos);
-      this.camera = this.cameras[0];
+      const photos = this.photos;
+
+      if (photosArray && photosArray.length > 0) {
+        photosArray.forEach(photo => {
+          const cameraPhotos = photos[photo.camera.full_name] || (photos[photo.camera.full_name] = []);
+          cameraPhotos.push(photo);
+        });
+        this.cameras = Object.keys(photos);
+        this.camera = this.cameras[0];
+      }
+      else {
+        this.photos = null;
+        this.cameras = undefined;
+        this.camera = undefined;
+      }
     });
   }
 }

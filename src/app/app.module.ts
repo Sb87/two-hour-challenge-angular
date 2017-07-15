@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { MyDatePickerModule } from 'mydatepicker';
+
 import { AppComponent } from './app.component';
 import { ImageService } from './image.service';
 import { ImageOfTheDayComponent } from './image-of-the-day/image-of-the-day.component';
@@ -19,7 +21,8 @@ import { RoverGalleryComponent } from './rover-gallery/rover-gallery.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    MyDatePickerModule
   ],
   providers: [ImageService],
   bootstrap: [AppComponent]

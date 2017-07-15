@@ -1,12 +1,15 @@
-<header>
-  <h2>{{rover}}: {{camera}}</h2>
-  <select [(ngModel)]="camera">
-  <option *ngFor="let c of cameras" [value]="c">{{c}}</option>
-</select>
+<header class="justified">
+  <h2>{{rover}}<ng-container *ngIf="camera">: {{camera}}</ng-container></h2>
+  <select class="btn roundedBtn" *ngIf="camera" [(ngModel)]="camera">
+    <option *ngFor="let c of cameras" [value]="c">{{c}}</option>
+  </select>
 </header>
 <section class="thumbs" *ngIf="photos">
   <div class="thumb" *ngFor="let photo of photos[camera]">
     <img [src]="photo.img_src" />
     <div class="caption">{{photo.earth_date | date:'MMMM dd, yyyy'}}</div>
   </div>
+</section>
+<section *ngIf="photos === null">
+  There are no photos from {{rover}} on {{date | date:'MMMM dd, yyyy'}}.
 </section>
